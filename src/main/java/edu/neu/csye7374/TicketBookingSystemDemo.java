@@ -23,12 +23,12 @@ public class TicketBookingSystemDemo {
         Command bookTicket = new BookTicketCommand(ticket);
         // Execute the command
         bookTicket.execute();
-//        // 使用状态模式更新票的状态
+        // 使用状态模式更新票的状态
         // Booking the ticket
         TicketState bookedState = new BookedState();
         ticket.setState(bookedState);
         ticket.handleState();
-//
+
 //        // 使用策略模式计算票价
 //        PricingStrategy pricingStrategy = new RegularPricingStrategy();
 //        double price = pricingStrategy.calculatePrice();
