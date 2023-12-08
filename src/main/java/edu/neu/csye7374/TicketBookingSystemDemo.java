@@ -19,13 +19,15 @@ public class TicketBookingSystemDemo {
         Ticket clonedTicket = (Ticket) (ticket).clone();
 
         // Decorate the ticket with early access
-        ticket = new EarlyAccessTicketDecorator(ticket);
-        ticket.printTicketInfo();
-        System.out.println("ticket price: "+ticket.getPrice());
-        // Further decorate with VIP package
-        ticket = new TicketInsuranceDecorator(ticket);
-        ticket.printTicketInfo();
-        System.out.println("ticket price: "+ticket.getPrice());
+        Ticket earlyAccessTicketDecorator = new EarlyAccessTicketDecorator(ticket);
+        earlyAccessTicketDecorator.printTicketInfo();
+        System.out.println("add early Access Ticket price: "+earlyAccessTicketDecorator.getPrice());
+        // Further decorate with Insurance package
+        Ticket ticketInsuranceDecorator = new TicketInsuranceDecorator(earlyAccessTicketDecorator);
+        ticketInsuranceDecorator.printTicketInfo();
+        System.out.println("add Insurance ticket price: "+ticketInsuranceDecorator.getPrice());
+
+        ticket.setPrice(ticketInsuranceDecorator.getPrice());
 
         // 使用命令模式处理票务预订
         // Create a command to book the ticket
