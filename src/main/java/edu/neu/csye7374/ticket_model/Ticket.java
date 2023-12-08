@@ -16,13 +16,14 @@ public abstract class Ticket implements Cloneable{
     }
 
     public Ticket() {
+        this.state = new AvailableState(); // Default state
     }
 
     public Ticket(Ticket ticket){
         this.title = ticket.title;
         this.eventDate = ticket.eventDate;
         this.price=ticket.price;
-        this.state = ticket.state;
+        this.state = new AvailableState(); // Default state
     }
 
     public Ticket(String title, String eventDate, double price) {
