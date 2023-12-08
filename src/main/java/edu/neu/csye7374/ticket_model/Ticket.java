@@ -1,14 +1,27 @@
 package edu.neu.csye7374.ticket_model;
 
+import edu.neu.csye7374.ticket_state.AvailableState;
+import edu.neu.csye7374.ticket_state.TicketState;
+
 public abstract class Ticket implements Cloneable{
     protected String title;
     protected String eventDate;
     protected double price;
+    private TicketState state;
 
     public Ticket(String title, String eventDate, double price) {
         this.title = title;
         this.eventDate = eventDate;
         this.price = price;
+        this.state = new AvailableState(); // Default state
+    }
+
+    public void handleState() {
+        state.handleState(this);
+    }
+
+    public void setState(TicketState state) {
+        this.state = state;
     }
 
     public String getTitle() {
