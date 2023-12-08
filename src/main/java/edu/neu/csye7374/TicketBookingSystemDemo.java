@@ -18,24 +18,11 @@ import edu.neu.csye7374.ticket_strategy.PricingStrategy;
 import edu.neu.csye7374.ticket_strategy.RegularPricingStrategy;
 
 public class TicketBookingSystemDemo {
-    public static void main(String[] args) {
+    public static void demo() {
 
-
-//        // 使用观察者模式通知用户（模拟）
-//        Customer customer = new Customer();
-//        TicketSubject ticketSubject = new TicketSubject();
-//        ticketSubject.attach(customer);
-//        ticketSubject.notifyObservers();
-
-
-//
-//        // Streamline the ticket booking and payment process using facade mode
+       // Streamline the ticket booking and payment process using facade mode
         TicketBookingFacade bookingFacade = new TicketBookingFacade();
         bookingFacade.bookTicket("movie",false);
-
-//        // 使用适配器模式处理支付
-//        PaymentGatewayAdapter paymentAdapter = new PaymentGatewayAdapter(new ExternalPaymentGateway());
-//        paymentAdapter.processPayment("using Paypal");
 
         bookingFacade.bookTicket("concert",true);
         System.out.println("Ticket booked and payment processed.");

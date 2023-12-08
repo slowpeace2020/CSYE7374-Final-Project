@@ -16,12 +16,8 @@ import edu.neu.csye7374.ticket_strategy.PricingStrategy;
 import edu.neu.csye7374.ticket_strategy.VIPPricingStrategy;
 
 public class TicketBookingFacade {
-//    private PaymentGatewayAdapter paymentAdapter;
-//    private NotificationService notificationService;
 
     public TicketBookingFacade() {
-//        this.paymentAdapter = new PaymentGatewayAdapter(new ExternalPaymentGateway());
-//        this.notificationService = new NotificationService();
     }
 
     public void bookTicket(String ticketType,boolean oneClick) {
