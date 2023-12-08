@@ -18,9 +18,6 @@ public abstract class Ticket implements Cloneable{
     public Ticket() {
     }
 
-    public Ticket(){
-
-    }
     public Ticket(Ticket ticket){
         this.title = ticket.title;
         this.eventDate = ticket.eventDate;
@@ -81,5 +78,6 @@ public abstract class Ticket implements Cloneable{
             throw new RuntimeException("Clone not supported", e);
         }
     }
+
 }
 
