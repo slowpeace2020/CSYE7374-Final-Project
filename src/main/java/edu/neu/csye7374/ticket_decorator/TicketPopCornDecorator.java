@@ -1,4 +1,4 @@
-package edu.neu.csye7374.ticket_adapter;
+package edu.neu.csye7374.ticket_decorator;
 
 import edu.neu.csye7374.ticket_model.Ticket;
 

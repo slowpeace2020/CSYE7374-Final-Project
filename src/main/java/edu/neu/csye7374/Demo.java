@@ -1,8 +1,8 @@
 package edu.neu.csye7374;
 
-import edu.neu.csye7374.ticket_adapter.TicketDrinksDecorator;
-import edu.neu.csye7374.ticket_adapter.TicketInsuranceDecorator;
-import edu.neu.csye7374.ticket_adapter.TicketPopCornDecorator;
+import edu.neu.csye7374.ticket_decorator.TicketDrinksDecorator;
+import edu.neu.csye7374.ticket_decorator.TicketInsuranceDecorator;
+import edu.neu.csye7374.ticket_decorator.TicketPopCornDecorator;
 import edu.neu.csye7374.ticket_model.Ticket;
 import edu.neu.csye7374.ticket_model.TicketFactory;
 import edu.neu.csye7374.ticket_strategy.DiscountPricingStrategy;
