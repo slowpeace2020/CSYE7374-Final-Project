@@ -18,6 +18,13 @@ public abstract class Ticket implements Cloneable{
     public Ticket() {
     }
 
+    public Ticket(Ticket ticket){
+        this.title = ticket.title;
+        this.eventDate = ticket.eventDate;
+        this.price=ticket.price;
+        this.state = ticket.state;
+    }
+
     public Ticket(String title, String eventDate, double price) {
         this.title = title;
         this.eventDate = eventDate;
@@ -71,5 +78,6 @@ public abstract class Ticket implements Cloneable{
             throw new RuntimeException("Clone not supported", e);
         }
     }
+
 }
 
