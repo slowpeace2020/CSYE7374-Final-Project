@@ -9,6 +9,9 @@ public abstract class Ticket implements Cloneable{
     protected double price;
     private TicketState state;
 
+    public Ticket() {
+    }
+
     public Ticket(String title, String eventDate, double price) {
         this.title = title;
         this.eventDate = eventDate;
