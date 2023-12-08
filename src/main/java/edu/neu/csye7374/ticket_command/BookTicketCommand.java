@@ -1,5 +1,9 @@
 package edu.neu.csye7374.ticket_command;
 
+import edu.neu.csye7374.customer_observer.Customer;
+import edu.neu.csye7374.customer_observer.TicketSubject;
+import edu.neu.csye7374.payment_adapter.ExternalPaymentGateway;
+import edu.neu.csye7374.payment_adapter.PaymentGatewayAdapter;
 import edu.neu.csye7374.ticket_model.Ticket;
 import edu.neu.csye7374.ticket_state.BookedState;
 
@@ -17,9 +21,20 @@ public class BookTicketCommand implements Command {
             processBooking(ticket);
             // Update the ticket's state to booked
             ticket.setState(new BookedState());
+
+            //payment method (adapter pattern)
+            PaymentGatewayAdapter paymentAdapter = new PaymentGatewayAdapter(new ExternalPaymentGateway());
+            paymentAdapter.processPayment("using Paypal");
+
             // Optionally, send a booking confirmation
             sendBookingConfirmation(ticket);
             System.out.println("Ticket booked successfully: " + ticket.getTitle());
+
+            // observer pattern
+            Customer customer = new Customer();
+            TicketSubject ticketSubject = new TicketSubject();
+            ticketSubject.attach(customer);
+            ticketSubject.notifyObservers();
         } else {
             System.out.println("Ticket booking failed, ticket is not available.");
         }

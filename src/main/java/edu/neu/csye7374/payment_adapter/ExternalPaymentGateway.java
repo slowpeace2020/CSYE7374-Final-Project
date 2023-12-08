@@ -9,7 +9,7 @@ package edu.neu.csye7374.payment_adapter;
  */
 public class ExternalPaymentGateway {
     void performExternalPayment(String paymentDetails) {
-        System.out.println("Performing external payment with details: " + paymentDetails);
+        System.out.println("Performing external payment with : " + paymentDetails);
         // payment:
     }
 }

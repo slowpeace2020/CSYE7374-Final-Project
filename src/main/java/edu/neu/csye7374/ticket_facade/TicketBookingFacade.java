@@ -27,9 +27,17 @@ public class TicketBookingFacade {
     public void bookTicket(String ticketType,boolean oneClick) {
         if(oneClick){
             //Handling tickets using template method pattern
-            TicketProcessingTemplate ticketProcessing = new MovieTicketProcessing();
-            ticketProcessing.processTicket();
-            return;
+            if ("movie".equals(ticketType)) {
+                TicketProcessingTemplate ticketProcessing = new MovieTicketProcessing();
+                ticketProcessing.processTicket();
+                return;
+            }
+            if ("concert".equals(ticketType)) {
+                TicketProcessingTemplate ticketProcessing = new ConcertTicketProcessing();
+                ticketProcessing.processTicket();
+                return;
+            }
+
         }
 
         // Create movie ticket using factory pattern
