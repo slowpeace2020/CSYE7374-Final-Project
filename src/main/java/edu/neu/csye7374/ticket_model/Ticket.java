@@ -1,5 +1,6 @@
 package edu.neu.csye7374.ticket_model;
 
+import edu.neu.csye7374.customer_observer.Customer;
 import edu.neu.csye7374.ticket_state.AvailableState;
 import edu.neu.csye7374.ticket_state.TicketState;
 
@@ -8,6 +9,14 @@ public abstract class Ticket implements Cloneable{
     protected String eventDate;
     protected double price;
     private TicketState state;
+    private Customer customer;
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Ticket() {
+    }
 
     public Ticket(){
 
