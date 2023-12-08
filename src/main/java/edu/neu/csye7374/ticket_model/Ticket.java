@@ -48,6 +48,10 @@ public abstract class Ticket implements Cloneable{
         this.price = price;
     }
 
+    public boolean isAvailable() {
+        return state instanceof AvailableState;
+    }
+
     public abstract void printTicketInfo();
 
     @Override
