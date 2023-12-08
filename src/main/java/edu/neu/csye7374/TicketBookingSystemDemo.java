@@ -12,10 +12,10 @@ import edu.neu.csye7374.ticket_state.TicketState;
 
 public class TicketBookingSystemDemo {
     public static void main(String[] args) {
-        // 使用工厂模式创建电影票
+        // Create movie ticket using factory pattern
         Ticket ticket = TicketFactory.getTicket("movie");
 
-        // 使用原型模式复制票（如果需要）
+        // Use prototype mode to copy the ticket (if needed)
         Ticket clonedTicket = (Ticket) (ticket).clone();
 
         // Decorate the ticket with early access
@@ -29,12 +29,12 @@ public class TicketBookingSystemDemo {
 
         ticket.setPrice(ticketInsuranceDecorator.getPrice());
 
-        // 使用命令模式处理票务预订
         // Create a command to book the ticket
         Command bookTicket = new BookTicketCommand(ticket);
         // Execute the command
         bookTicket.execute();
-        // 使用状态模式更新票的状态
+
+        // Update the status of a ticket using status design
         // Booking the ticket
         TicketState bookedState = new BookedState();
         ticket.setState(bookedState);
