@@ -21,9 +21,12 @@ public class TicketBookingSystemDemo {
     public static void demo() {
 
        // Streamline the ticket booking and payment process using facade mode
+        System.out.println("===========start booking movie ticket using Facade Design===========");
         TicketBookingFacade bookingFacade = new TicketBookingFacade();
         bookingFacade.bookTicket("movie",false);
-
+        System.out.println("Ticket booked and payment processed.");
+        System.out.println();
+        System.out.println("===========start booking concert ticket using Template Design ===========");
         bookingFacade.bookTicket("concert",true);
         System.out.println("Ticket booked and payment processed.");
     }
