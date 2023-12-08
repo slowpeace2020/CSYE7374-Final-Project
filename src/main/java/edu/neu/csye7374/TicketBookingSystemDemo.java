@@ -1,8 +1,11 @@
 package edu.neu.csye7374;
 
+import edu.neu.csye7374.ticket_command.BookTicketCommand;
+import edu.neu.csye7374.ticket_command.Command;
 import edu.neu.csye7374.ticket_model.Ticket;
 import edu.neu.csye7374.ticket_model.TicketFactory;
 import edu.neu.csye7374.ticket_state.BookedState;
+import edu.neu.csye7374.ticket_state.TicketState;
 
 public class TicketBookingSystemDemo {
     public static void main(String[] args) {
@@ -12,20 +15,19 @@ public class TicketBookingSystemDemo {
         // 使用原型模式复制票（如果需要）
         Ticket clonedTicket = (Ticket) (ticket).clone();
 
-        // Booking the ticket
-        ticket.setState(new BookedState());
-        ticket.handleState();
-
         // 使用装饰器模式增强票务功能（例如，添加额外服务）
 //        TicketDecorator decoratedTicket = new PremiumTicketDecorator(ticket);
 //
 //        // 使用命令模式处理票务预订
-//        Command bookTicketCommand = new BookTicketCommand(ticket);
-//        bookTicketCommand.execute();
-//
+        // Create a command to book the ticket
+        Command bookTicket = new BookTicketCommand(ticket);
+        // Execute the command
+        bookTicket.execute();
 //        // 使用状态模式更新票的状态
-//        TicketState bookedState = new BookedState();
-//        bookedState.handleState();
+        // Booking the ticket
+        TicketState bookedState = new BookedState();
+        ticket.setState(bookedState);
+        ticket.handleState();
 //
 //        // 使用策略模式计算票价
 //        PricingStrategy pricingStrategy = new RegularPricingStrategy();
