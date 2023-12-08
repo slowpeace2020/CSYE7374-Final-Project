@@ -32,9 +32,9 @@ public class TicketBookingSystemDemo {
 //        double price = pricingStrategy.calculatePrice();
 //
 //        // 使用观察者模式通知用户（模拟）
-//        User user = new User();
+//        Customer customer = new Customer();
 //        TicketSubject ticketSubject = new TicketSubject();
-//        ticketSubject.attach(user);
+//        ticketSubject.attach(customer);
 //        ticketSubject.notifyObservers();
 //
 //        // 使用模板方法模式处理票务
