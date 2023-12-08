@@ -1,5 +1,9 @@
 package edu.neu.csye7374;
 
+import edu.neu.csye7374.customer_observer.Customer;
+import edu.neu.csye7374.customer_observer.TicketSubject;
+import edu.neu.csye7374.payment_adapter.ExternalPaymentGateway;
+import edu.neu.csye7374.payment_adapter.PaymentGatewayAdapter;
 import edu.neu.csye7374.ticket_command.BookTicketCommand;
 import edu.neu.csye7374.ticket_command.Command;
 import edu.neu.csye7374.ticket_decorator.EarlyAccessTicketDecorator;
@@ -22,7 +26,7 @@ public class TicketBookingSystemDemo {
 //        TicketSubject ticketSubject = new TicketSubject();
 //        ticketSubject.attach(customer);
 //        ticketSubject.notifyObservers();
-//
+
 
 //
 //        // Streamline the ticket booking and payment process using facade mode
@@ -31,8 +35,9 @@ public class TicketBookingSystemDemo {
 
 //        // 使用适配器模式处理支付
 //        PaymentGatewayAdapter paymentAdapter = new PaymentGatewayAdapter(new ExternalPaymentGateway());
-//        paymentAdapter.processPayment(paymentDetails);
+//        paymentAdapter.processPayment("using Paypal");
 
+        bookingFacade.bookTicket("concert",true);
         System.out.println("Ticket booked and payment processed.");
     }
 }
