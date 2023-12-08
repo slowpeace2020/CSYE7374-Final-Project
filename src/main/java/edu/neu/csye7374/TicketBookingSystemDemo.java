@@ -2,6 +2,7 @@ package edu.neu.csye7374;
 
 import edu.neu.csye7374.ticket_model.Ticket;
 import edu.neu.csye7374.ticket_model.TicketFactory;
+import edu.neu.csye7374.ticket_state.BookedState;
 
 public class TicketBookingSystemDemo {
     public static void main(String[] args) {
@@ -10,6 +11,10 @@ public class TicketBookingSystemDemo {
 
         // 使用原型模式复制票（如果需要）
         Ticket clonedTicket = (Ticket) (ticket).clone();
+
+        // Booking the ticket
+        ticket.setState(new BookedState());
+        ticket.handleState();
 
         // 使用装饰器模式增强票务功能（例如，添加额外服务）
 //        TicketDecorator decoratedTicket = new PremiumTicketDecorator(ticket);
