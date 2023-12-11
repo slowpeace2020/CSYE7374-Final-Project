@@ -1,7 +1,7 @@
 package edu.neu.csye7374.processing;
 
 public abstract class TicketProcessingTemplate {
-    // 模板方法，定义了处理票务的步骤
+    // Template Method, defines the steps for handling ticketing
     public final void processTicket() {
         stepOne();
         stepTwo();
@@ -13,7 +13,7 @@ public abstract class TicketProcessingTemplate {
     abstract void stepTwo();
     abstract void stepThree();
 
-    // 最后的步骤可以是通用的，也可以被子类覆盖
+    // The final step can be generic or overridden by subclasses
     void finalizeTicket() {
         System.out.println("Finalizing ticket process.");
     }
